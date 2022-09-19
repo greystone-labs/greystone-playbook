@@ -35,6 +35,60 @@ Resources:
 * [Rails Cops](https://docs.rubocop.org/rubocop-rails/cops.html)
 
 ## React:
+Best Practices for Modern React Apps as of (Sept 2022)
+
+- Extract rendered jsx components into own rendered function, do not nest rendered functions
+
+Before
+```
+const Parent = () => {
+  const SecondChild = () => {
+    return <div> ... </div>
+  }
+    
+  const Child = () => {
+    return <div> ... </div>
+  }
+
+  return (
+    <div>
+     <Child/>
+     <SecondChild />
+    </div>
+  )
+}
+```
+
+After
+```
+  const Child = () => {
+    return <div>... </div>
+  }
+
+  const SecondChild = () => {
+    return <div> ... </div>
+  }
+
+const Parent = () => {
+
+  return (
+    <div>
+     <Child/>
+     <SecondChild />
+    </div>
+  )
+}
+```
+
+- Consider using "React Context" when child prop drilling dependency exceeds grandchild 
+
+- Use "UseMemo" when logic heavy or expensive functions do not have a jsx render (i.e. Data Transformation, caculations) 
+
+- Decouple nested state objects wherever possible to aviod multiple re-renders, creating "custom hooks" to return only the needed values can avoid unnecessary renders 
+
+- Avoid hard coded values to determine logical pathing. Using an object as dictionary is a better approach.
+
+- Function based file naming conventions. Name files by the primary function and the subject it acts upon. i.e. "createTasks" vs "create" 
 
 ## DevOps:
 * Terraform
