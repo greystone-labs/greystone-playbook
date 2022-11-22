@@ -1,4 +1,4 @@
-# Best Practices
+# Best Practices for React Applications
 
 The development community is vast and we take the approach that no individual is wiser than the group, so we leverage community best practices where possible. 
 
