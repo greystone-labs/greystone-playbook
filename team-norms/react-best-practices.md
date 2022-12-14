@@ -2,7 +2,7 @@
 
 The development community is vast and we take the approach that no individual is wiser than the group, so we leverage community best practices where possible. 
 
-Use community curated guidelines and best practices as the default standard and document any changes on a case by case basis.
+GOAL: To use community curated guidelines and best practices as the default standard and MUST document any changes on a case by case basis.
 
 ## Testing:
 * https://github.com/abinoda/rspec-best-practices
